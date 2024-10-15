@@ -5,3 +5,11 @@
 @import "./Partials/variables.scss";
 @import "./Partials/mixins.scss";
 @import "./Partials/media-query.scss";
+html, body{
+    margin: 0px;
+    min-height: 100vh;
+}
+
+main{
+    min-height: 100vh;
+}
