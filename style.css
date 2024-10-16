@@ -1,3 +1,97 @@
+footer {
+  height: 200px;
+  /* height: auto; */
+  width: 100%;
+  background-color: #ffafcc;
+}
+footer .footer-wrapper {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+footer .footer-wrapper .footer-upper {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 80%;
+}
+footer .footer-wrapper .footer-upper .footer-logotype {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+  font-size: 2rem;
+}
+@media (width > 998px) {
+  footer .footer-wrapper .footer-upper .footer-logotype {
+    padding-left: 100px;
+    justify-content: flex-start;
+  }
+}
+footer .footer-wrapper .footer-upper .footer-links {
+  display: flex;
+  flex-flow: row;
+  justify-content: center;
+  align-items: center;
+  width: 50%;
+  height: 100%;
+}
+@media (width > 998px) {
+  footer .footer-wrapper .footer-upper .footer-links {
+    padding-right: 100px;
+    justify-content: flex-end;
+    margin-top: 40px;
+  }
+}
+footer .footer-wrapper .footer-upper .footer-links ul li {
+  list-style: none;
+  margin-bottom: 8px;
+  text-align: right;
+  font-size: 0.75rem;
+}
+@media (width > 998px) {
+  footer .footer-wrapper .footer-upper .footer-links ul li {
+    font-size: 1.5rem;
+  }
+}
+footer .footer-wrapper .footer-upper .footer-links ul li a {
+  text-decoration: none;
+  color: black;
+}
+footer .footer-wrapper .footer-upper .footer-links ul li a:hover {
+  text-decoration: underline;
+}
+footer .footer-wrapper .footer-bottom {
+  width: 100%;
+  height: auto;
+  text-align: center;
+}
+footer .footer-wrapper .footer-bottom hr {
+  width: 90%;
+  height: 1px;
+  color: #7e7e7e;
+  background: #7e7e7e;
+  font-size: 0;
+  border: 0;
+}
+@media (width > 998px) {
+  footer .footer-wrapper .footer-bottom hr {
+    display: none;
+  }
+}
+footer .footer-wrapper .footer-bottom p {
+  font-size: 0.75rem;
+  font-style: italic;
+  margin: 15px 0 10px 0;
+}
+
 html, body {
   margin: 0px;
   min-height: 100vh;
