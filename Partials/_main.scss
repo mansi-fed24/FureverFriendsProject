@@ -1,47 +1,57 @@
 main {
   @include flex(column, flex-start);
-  > figure:first-child {
+  section.hero {
+    width: 100%;
     border-top: 10px solid $color-4;
     border-bottom: 10px solid $color-4;
-    box-shadow: inset 0px 2px #fff, inset 0px -2px #fff;
-    padding: 2px 0px;
-    > div:first-child {
-      position: absolute;
-      top: 20%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 100%;
-      background-color: $color-3;
-      box-shadow: inset 0px 2px #fff, inset 0px -2px #fff;
-      padding: 5px 0px;
-      border-top: 5px solid $color-4;
-      border-bottom: 5px solid $color-4;
-      h1,
-      h2 {
-        color: #fff;
+    > figure:first-child {
+      border-top: 5px solid #fff;
+      border-bottom: 5px solid #fff;
+      > div:first-child {
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        transform: translate(-50%, -50%);
         width: 100%;
-        text-align: center;
-        font-size: 3vw;
-        margin: 0px;
-      }
-      h1 {
-        font-size: 7vw;
+        background-color: $color-3;
+        box-shadow: inset 0px 2px #fff, inset 0px -2px #fff;
+        padding: 5px 0px;
+        border-top: 5px solid $color-4;
+        border-bottom: 5px solid $color-4;
+        h1,
+        h2 {
+          color: #fff;
+          width: 100%;
+          text-align: center;
+          font-size: 4vw;
+          margin: 0px;
+          border: none;
+        }
+        h1 {
+          font-size: 7vw;
+        }
       }
     }
+  }
+
+  section:not(section.hero) {
+    @include flex();
+    box-sizing: border-box;
+    padding: 10px;
   }
   figure {
     @include flex(row wrap);
     position: relative;
     width: 100%;
     min-width: $min-width;
-
+    margin: 0px;
     > img {
       width: 100%;
       object-fit: contain;
     }
   }
 
-  > article {
+  article {
     @include flex();
     @include box-shadow();
     margin: 1rem;
@@ -49,49 +59,65 @@ main {
     max-width: $max-width;
     min-width: $min-width;
     > div {
-      @include flex(row wrap);
+      @include flex(column);
       box-sizing: border-box;
       padding: 1rem;
-      h2 {
-        width: 100%;
-        text-align: center;
-        border-bottom: 2px solid $gray-dark;
-        margin: 1rem;
-      }
+
       p {
         font-size: $medium;
         text-align: center;
       }
     }
-    footer {
+    >footer {
       @include flex(column);
       width: 100%;
       a {
         width: 100%;
       }
-      button {
-        @include border(2px, $color-3-dark);
-        width: 100%;
-        text-decoration: none;
-        font-size: $medium;
-        padding: 5px;
-        background-color: $color-3;
-        border-radius: 3px;
-        transition: 0.1s;
-      }
-      button:hover {
-        background-color: $color-4;
-        cursor: pointer;
-        transition: 0.1s;
-      }
-      button:active {
-        transform: scale(0.93);
-        box-shadow: inset 2px 2px #fff, inset -2px -2px #fff;
-
-        background-color: $color-4-light;
-        text-decoration: none;
-        color: #000;
-      }
     }
   }
+}
+
+aside {
+  @include flex();
+  box-sizing: border-box;
+  padding: 10px;
+}
+
+h2 {
+  width: 100%;
+  text-align: center;
+  border-bottom: 3px solid $color-4;
+  margin: 1rem;
+}
+h3 {
+  width: 100%;
+  text-align: center;
+  border-bottom: 3px solid $color-2;
+  margin: .8rem;
+}
+
+
+button {
+  @include border(2px, $color-3-dark);
+  width: 100%;
+  text-decoration: none;
+  font-size: $medium;
+  padding: 5px;
+  background-color: $color-3;
+  border-radius: 3px;
+  transition: 0.1s;
+}
+button:hover {
+  background-color: $color-4;
+  cursor: pointer;
+  transition: 0.1s;
+}
+button:active {
+  transform: scale(0.93);
+  box-shadow: inset 2px 2px #fff, inset -2px -2px #fff;
+
+  background-color: $color-4-light;
+  text-decoration: none;
+  color: #000;
 }
