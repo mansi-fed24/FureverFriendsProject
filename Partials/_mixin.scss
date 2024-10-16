@@ -1,6 +1,15 @@
-@mixin flex($direction, $justify:center, $align:center){
+@mixin flex($direction:column, $justify:center, $align:center){
     display: flex;
     flex-flow: $direction;
     justify-content: $justify;
     align-items: $align;
+}
+
+@mixin box-shadow(){
+    box-shadow: 3px 3px 3px #929292;
+
+}
+@mixin border($size:3px, $color:$gray){
+    border: $size solid $color;
+
 }
