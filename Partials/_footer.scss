@@ -1,0 +1,103 @@
+footer {
+    height: 200px;
+    /* height: auto; */
+    width: 100%;
+    background-color: $color-footer;
+
+    .footer-wrapper {
+        @include flex($direction: column);
+        width: 100%;
+        height: 100%;
+
+        .footer-upper {
+            @include flex($direction: row);
+            width: 100%;
+            height: 80%;
+            
+            .footer-address {
+                display: none;
+
+                @include desktop {
+                    @include flex($direction: column);
+                    width: 33%;
+                    height: 100%;
+                }
+            }
+
+
+            .footer-logotype {
+                @include flex($direction: row);
+                width: 50%;
+                height: 100%;
+                font-size: 2rem;
+
+                @include desktop {          
+                    width: 33%;
+                }
+                
+            }
+
+            
+            .footer-links {
+                @include flex($direction: row, $justify: center);
+                width: 50%;
+                height: 100%;
+
+                @include desktop {
+                    justify-content: flex-end;
+                    width: 33%;
+                }
+
+                ul li {
+                    list-style: none;
+                    margin-bottom: 8px;
+                    text-align: right;
+                    font-size: 1rem;
+
+                    @include desktop {
+                        font-size: 1.5rem;
+                        display: inline-block;
+                        margin-right: 15px;
+                    }
+
+                    a {
+                        text-decoration: none;
+                        color: black;
+
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+                }
+
+            }
+        }
+
+        .footer-bottom {
+            width: 100%;
+            height: auto;
+            text-align: center;
+
+            hr {
+                width: 90%;
+                height: 1px;
+                color: #7e7e7e;
+                background: #7e7e7e;
+                font-size: 0;
+                border: 0;
+
+                @include desktop {
+                    display: none;
+                }
+                
+            }
+
+            p {
+                font-size: 0.75rem;
+                font-style: italic;
+                margin: 15px 0 10px 0;
+            }
+        }
+
+    }
+}
