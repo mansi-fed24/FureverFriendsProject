@@ -1,3 +1,173 @@
+main {
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+main section.hero {
+  width: 100%;
+  border-top: 10px solid #58aeff;
+  border-bottom: 10px solid #58aeff;
+  height: 100vh;
+  background: linear-gradient(-45deg, #a2d2ff, #ffc8dd, #58aeff, #ffc8dd, #a2d2ff);
+  background-size: 400% 400%;
+  animation: gradient-background 20s ease infinite;
+}
+main section.hero > div:first-child {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  background-color: #58aeff;
+  background-color: #1a7dda;
+  box-shadow: inset 0px 2px #fff, inset 0px -2px #fff;
+  padding: 5px 0px;
+  border-top: 5px solid #58aeff;
+  border-bottom: 5px solid #58aeff;
+}
+main section.hero > div:first-child h1,
+main section.hero > div:first-child h2 {
+  width: -moz-fit-content;
+  width: fit-content;
+  color: #fff;
+  text-align: center;
+  font-size: 1.5rem;
+  margin: 0px;
+  border: none;
+}
+main section.hero > div:first-child h1 {
+  font-size: 2rem;
+  border-bottom: 3px solid #a2d2ff;
+}
+main section.hero > figure:first-child {
+  border-top: 5px solid #fff;
+  border-bottom: 5px solid #fff;
+}
+main section:not(section.hero) {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 10px;
+}
+main figure {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 100%;
+  min-width: 250px;
+  margin: 0px;
+}
+main figure > img {
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+main article {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 3px 3px 3px #929292;
+  border: 1px solid #000;
+  margin: 1rem;
+  background-color: #fafafa;
+  max-width: 500px;
+  min-width: 250px;
+}
+main article > div {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 1rem;
+}
+main article > div p {
+  font-size: 18px;
+  text-align: center;
+}
+main article footer {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  height: -moz-fit-content;
+  height: fit-content;
+  /* height: auto; */
+  width: 100%;
+  background-color: transparent;
+}
+main article footer a {
+  width: 100%;
+}
+main aside {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+  padding: 10px;
+}
+main h2 {
+  width: 100%;
+  text-align: center;
+  border-bottom: 3px solid #a2d2ff;
+  margin: 1rem;
+}
+main h3 {
+  width: 100%;
+  text-align: center;
+  border-bottom: 3px solid #ffafcc;
+  margin: 0.8rem;
+}
+
+.btn {
+  border: 2px solid #58aeff;
+  width: 100%;
+  text-decoration: none;
+  font-size: 18px;
+  padding: 5px;
+  background-color: #a2d2ff;
+  border-radius: 3px;
+  transition: 0.1s;
+  color: #000;
+  text-align: center;
+}
+
+.btn:hover {
+  background-color: #bde0fe;
+  cursor: pointer;
+  transition: 0.1s;
+}
+
+.btn:active {
+  transform: scale(0.93);
+  box-shadow: inset 2px 2px #fff, inset -2px -2px #fff;
+  background-color: #ddefff;
+  text-decoration: none;
+  color: #000;
+}
+
+@keyframes gradient-background {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 footer {
   height: 200px;
   /* height: auto; */
@@ -112,4 +282,16 @@ html, body {
 
 main {
   min-height: 100vh;
+}
+
+h1 {
+  font-size: 34px;
+}
+
+h2 {
+  font-size: 28px;
+}
+
+h3 {
+  font-size: 22px;
 }/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,154 @@
+main {
+  @include flex(column, flex-start);
+  section.hero {
+    width: 100%;
+    border-top: 10px solid $color-3-dark;
+    border-bottom: 10px solid $color-3-dark;
+    height: 100vh;
+    background: linear-gradient(
+      -45deg,
+      $color-3,
+      $color-2,
+      $color-3-dark,
+      $color-2,
+      $color-3
+    );
+    background-size: 400% 400%;
+    animation: gradient-background 20s ease infinite;
+    > div:first-child {
+      @include flex();
+      position: absolute;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      background-color: $color-3-dark;
+      background-color: #1a7dda;
+      box-shadow: inset 0px 2px #fff, inset 0px -2px #fff;
+      padding: 5px 0px;
+      border-top: 5px solid $color-3-dark;
+      border-bottom: 5px solid $color-3-dark;
+      h1,
+      h2 {
+        width: fit-content;
+        color: #fff;
+        text-align: center;
+        font-size: 1.5rem;
+        margin: 0px;
+        border: none;
+      }
+      h1 {
+        font-size: 2rem;
+        border-bottom: 3px solid $color-3;
+      }
+    }
+    > figure:first-child {
+      border-top: 5px solid #fff;
+      border-bottom: 5px solid #fff;
+    }
+  }
+
+  section:not(section.hero) {
+    @include flex();
+    box-sizing: border-box;
+    padding: 10px;
+  }
+  figure {
+    @include flex(row wrap);
+    position: relative;
+    width: 100%;
+    min-width: $min-width;
+    margin: 0px;
+    > img {
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+
+  article {
+    @include flex();
+    @include box-shadow();
+    @include border(1px, #000);
+    margin: 1rem;
+    background-color: $white;
+    max-width: $max-width;
+    min-width: $min-width;
+    > div {
+      @include flex(column);
+      box-sizing: border-box;
+      padding: 1rem;
+
+      p {
+        font-size: $medium;
+        text-align: center;
+      }
+    }
+    footer {
+      @include flex(column);
+      height: fit-content;
+      /* height: auto; */
+      width: 100%;
+      background-color: transparent;
+      a {
+        width: 100%;
+      }
+    }
+  }
+
+  aside {
+    @include flex();
+    box-sizing: border-box;
+    padding: 10px;
+  }
+
+  h2 {
+    width: 100%;
+    text-align: center;
+    border-bottom: 3px solid $color-3;
+    margin: 1rem;
+  }
+  h3 {
+    width: 100%;
+    text-align: center;
+    border-bottom: 3px solid $color-1;
+    margin: 0.8rem;
+  }
+}
+
+.btn {
+  @include border(2px, $color-3-dark);
+  width: 100%;
+  text-decoration: none;
+  font-size: $medium;
+  padding: 5px;
+  background-color: $color-3;
+  border-radius: 3px;
+  transition: 0.1s;
+  color: #000;
+  text-align: center;
+}
+.btn:hover {
+  background-color: $color-4;
+  cursor: pointer;
+  transition: 0.1s;
+}
+.btn:active {
+  transform: scale(0.93);
+  box-shadow: inset 2px 2px #fff, inset -2px -2px #fff;
+
+  background-color: $color-4-light;
+  text-decoration: none;
+  color: #000;
+}
+
+@keyframes gradient-background {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 100%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
