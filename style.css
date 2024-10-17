@@ -83,14 +83,17 @@ main article > div p {
   font-size: 18px;
   text-align: center;
 }
-main article > footer {
+main article footer {
   display: flex;
   flex-flow: column;
   justify-content: center;
   align-items: center;
   width: 100%;
 }
-main article > footer a {
+main article footer a {
+  width: 100%;
+}
+main article footer a button {
   width: 100%;
 }
 

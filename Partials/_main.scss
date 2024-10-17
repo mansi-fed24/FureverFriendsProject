@@ -68,11 +68,15 @@ main {
         text-align: center;
       }
     }
-    >footer {
+    footer {
       @include flex(column);
       width: 100%;
       a {
         width: 100%;
+        button{
+          width: 100%; 
+          
+        }
       }
     }
   }
