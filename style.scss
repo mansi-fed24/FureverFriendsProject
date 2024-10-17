@@ -1,10 +1,10 @@
-@import "./Partials/header.scss";
-@import "./Partials/main.scss";
-@import "./Partials/footer.scss";
-
 @import "./Partials/variables.scss";
 @import "./Partials/mixin.scss";
 @import "./Partials/media-query.scss";
+
+@import "./Partials/header.scss";
+@import "./Partials/main.scss";
+@import "./Partials/footer.scss";
 html, body{
     margin: 0px;
     min-height: 100vh;
@@ -12,4 +12,14 @@ html, body{
 
 main{
     min-height: 100vh;
+}
+
+h1{
+    font-size: 34px;
+}
+h2{
+    font-size: 28px;
+}
+h3{
+    font-size: 22px;
 }
