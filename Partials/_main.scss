@@ -1,50 +1,56 @@
 main {
   @include flex(column, flex-start);
-  section.hero {
-    width: 100%;
-    border-top: 10px solid $color-3-dark;
-    border-bottom: 10px solid $color-3-dark;
-    height: 100vh;
-    background: linear-gradient(
-      -45deg,
-      $color-3,
-      $color-2,
-      $color-3-dark,
-      $color-2,
-      $color-3
-    );
-    background-size: 400% 400%;
-    animation: gradient-background 20s ease infinite;
-    > div:first-child {
-      @include flex();
-      position: absolute;
-      top: 30%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+  article.about-card {
+    p {
+      text-align: start;
       width: 100%;
-      background-color: $color-3-dark;
-      background-color: #1a7dda;
-      box-shadow: inset 0px 2px #fff, inset 0px -2px #fff;
-      padding: 5px 0px;
-      border-top: 5px solid $color-3-dark;
-      border-bottom: 5px solid $color-3-dark;
+      margin: 0.3rem;
+    }
+  }
+  section.hero {
+    @include flex($justify: flex-start);
+    width: 100%;
+    min-height: 100vh;
+    background-image: linear-gradient(#fff 50%, $color-3, $color-1);
+    background-repeat: no-repeat;
+    margin: 0px;
+    border-bottom: 2px solid #000;
+    @include desktop() {
+      background-image: linear-gradient(transparent 50%, $color-1, $color-3),
+        url("/Images/forest.png");
+      background-size: 100% 100%;
+    }
+    article {
+      background-color: $color-4-light;
+      > div > div {
+        background-color: #fff;
+      }
+    }
+    > header:first-child {
+      margin: 50px 0px 0px 0px;
+      width: 100%;
+      background-color: #ffffffc4;
+      border: 4px solid rgba(162, 210, 255, 0.729);
+      border-left: 0px;
+      border-right: 0px;
+      @include flex();
       h1,
       h2 {
-        width: fit-content;
-        color: #fff;
         text-align: center;
-        font-size: 1.5rem;
-        margin: 0px;
+        margin: 5px;
         border: none;
+      }
+      h2 {
+        color: #0858a3;
+        font-size: 1.5rem;
       }
       h1 {
         font-size: 2rem;
-        border-bottom: 3px solid $color-3;
       }
     }
-    > figure:first-child {
-      border-top: 5px solid #fff;
-      border-bottom: 5px solid #fff;
+    > header.title {
+      position: absolute;
+      top: 20%;
     }
   }
 
@@ -53,12 +59,53 @@ main {
     box-sizing: border-box;
     padding: 10px;
   }
+  .btn {
+    @include border(2px, $color-3-dark);
+    width: 100%;
+    text-decoration: none;
+    font-size: $medium;
+    padding: 5px;
+    background-color: $color-3;
+    border-radius: 3px;
+    transition: 0.1s;
+    color: #000;
+    text-align: center;
+  }
+  .btn:hover {
+    background-color: $color-4;
+    cursor: pointer;
+    transition: 0.1s;
+  }
+  .btn:active {
+    transform: scale(0.93);
+    box-shadow: inset 2px 2px #fff, inset -2px -2px #fff;
+
+    background-color: $color-4-light;
+    text-decoration: none;
+    color: #000;
+  }
+  .with-undertitle {
+    border: none;
+    margin: 0px;
+  }
+  .with-undertitle + h4 {
+    width: 100%;
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: 0.8rem;
+    padding-bottom: 0.8rem;
+    color: #434343;
+    border-bottom: 3px solid $color-1;
+  }
   figure {
     @include flex(row wrap);
     position: relative;
     width: 100%;
+    max-height: 290px;
+    background-color: #1a7dda;
     min-width: $min-width;
     margin: 0px;
+    overflow: hidden;
     > img {
       width: 100%;
       object-fit: contain;
@@ -73,20 +120,40 @@ main {
     background-color: $white;
     max-width: $max-width;
     min-width: $min-width;
+    aside {
+      @include flex();
+      background-color: $color-2;
+      border-radius: 15px;
+      @include border(3px, $color-1);
+      width: 100%;
+      h4 {
+        text-align: start;
+        width: 100%;
+        margin: 0.3rem;
+        text-decoration: underline;
+        font-size: $medium;
+        color: #d30a53;
+      }
+    }
     > div {
       @include flex(column);
       box-sizing: border-box;
       padding: 1rem;
-
+      > div {
+        background-color: #efefef;
+        border-radius: 15px;
+        margin: 0.8rem 0px;
+        padding: 1rem;
+      }
       p {
         font-size: $medium;
         text-align: center;
+        overflow-wrap: anywhere;
       }
     }
     footer {
       @include flex(column);
       height: fit-content;
-      /* height: auto; */
       width: 100%;
       background-color: transparent;
       a {
@@ -112,43 +179,5 @@ main {
     text-align: center;
     border-bottom: 3px solid $color-1;
     margin: 0.8rem;
-  }
-}
-
-.btn {
-  @include border(2px, $color-3-dark);
-  width: 100%;
-  text-decoration: none;
-  font-size: $medium;
-  padding: 5px;
-  background-color: $color-3;
-  border-radius: 3px;
-  transition: 0.1s;
-  color: #000;
-  text-align: center;
-}
-.btn:hover {
-  background-color: $color-4;
-  cursor: pointer;
-  transition: 0.1s;
-}
-.btn:active {
-  transform: scale(0.93);
-  box-shadow: inset 2px 2px #fff, inset -2px -2px #fff;
-
-  background-color: $color-4-light;
-  text-decoration: none;
-  color: #000;
-}
-
-@keyframes gradient-background {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 100%;
-  }
-  100% {
-    background-position: 0% 50%;
   }
 }
