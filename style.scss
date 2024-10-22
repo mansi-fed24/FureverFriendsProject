@@ -5,14 +5,17 @@
 @import "./Partials/header.scss";
 @import "./Partials/main.scss";
 @import "./Partials/footer.scss";
+@import "./Partials/references";
 
 html, body{
     margin: 0px;
     min-height: 100vh;
+    
 }
 
-main{
+body{
     min-height: 100vh;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 h1{

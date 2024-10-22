@@ -1,3 +1,122 @@
+* {
+  padding: 0;
+}
+
+body {
+  overflow-x: hidden; /* Prevents horizontal scrolling */
+}
+
+.main-header {
+  position: sticky;
+  top: 0;
+  background-color: #fff;
+  border-bottom: 1px solid #000;
+  z-index: 2;
+}
+.main-header nav {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.main-header nav ul {
+  width: auto;
+}
+
+.showontop {
+  width: 200px;
+}
+.showontop img {
+  width: 100%;
+}
+
+.cart {
+  right: 4vw;
+}
+
+/* hamburger tag */
+.sidebar {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 150px;
+  z-index: 900;
+  background-color: rgba(255, 255, 255, 0.2);
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px); /*blur the background*/
+  box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+.sidebar.show {
+  left: 0;
+}
+.sidebar a {
+  width: 100%;
+}
+.sidebar a:hover {
+  background-color: #a2d2ff;
+}
+.sidebar li {
+  width: 100%;
+}
+
+.hideOnMobile {
+  display: none;
+}
+
+.menu-button {
+  display: block;
+}
+
+nav ul {
+  width: 100%;
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+nav ul li img {
+  width: 150px; /* Set the desired width */
+  height: auto; /* Maintain the aspect ratio */
+  border-radius: 0; /* Remove rounding if applied */
+}
+nav li {
+  height: 100px;
+  padding-right: 20px;
+  padding-bottom: 5px;
+}
+nav li:first-child {
+  margin-right: auto;
+}
+nav a {
+  height: 100%;
+  margin-left: 10px;
+  padding: 10px 10px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  color: black;
+}
+nav a:hover {
+  background-color: #a2d2ff;
+}
+
+@media (width > 998px) {
+  nav ul {
+    flex-direction: row;
+    justify-content: flex-end;
+  }
+  .hideOnMobile {
+    display: block;
+  }
+  .menu-button {
+    display: none;
+  }
+}
 main {
   font-family: "Poppins", sans-serif;
   display: flex;
@@ -72,6 +191,7 @@ main section.hero > header:first-child h1 {
   font-size: 2rem;
 }
 main section.hero > header.title {
+  z-index: 1;
   position: absolute;
   top: 20%;
 }
@@ -691,8 +811,9 @@ html, body {
   min-height: 100vh;
 }
 
-main {
+body {
   min-height: 100vh;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 h1 {
