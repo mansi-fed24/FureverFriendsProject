@@ -1,4 +1,5 @@
 footer {
+    font-family: "Poppins", sans-serif;
     height: 200px;
     /* height: auto; */
     width: 100%;
@@ -30,7 +31,7 @@ footer {
                 width: 50%;
                 height: 100%;
                 font-size: 2rem;
-
+                
                 @include desktop {          
                     width: 33%;
                 }
@@ -46,9 +47,11 @@ footer {
                 @include desktop {
                     justify-content: flex-end;
                     width: 33%;
+                    flex-shrink: 0;
                 }
 
                 ul li {
+                    font-family: "Montserrat", sans-serif;
                     list-style: none;
                     margin-bottom: 8px;
                     text-align: right;
@@ -88,8 +91,7 @@ footer {
 
                 @include desktop {
                     display: none;
-                }
-                
+                }   
             }
 
             p {
