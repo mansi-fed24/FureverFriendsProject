@@ -2,6 +2,19 @@ main {
   // font-family: "Montserrat", serif;
   font-family: "Poppins", sans-serif;
   @include flex(column, flex-start);
+  #to-top {
+    position: sticky;
+    bottom: 10px;
+    left: 90%;
+    color: #000;
+    text-decoration: none;
+    z-index: 2;
+    background-color: #d0d0d0;
+    border-radius: 50%;
+    font-size: 50px;
+    margin: 20px;
+  }
+
   article.about-card {
     p {
       text-align: start;
@@ -61,6 +74,126 @@ main {
     box-sizing: border-box;
     padding: 10px;
   }
+  section.products-header {
+    width: 100%;
+    background-color: $color-3;
+    padding: 0px !important;
+    h1 {
+      margin-bottom: 0px;
+    }
+    .top-field {
+      width: 100%;
+      // border-top: 1px solid #000;
+      border-bottom: 1px solid #000;
+      input[type="checkbox"] {
+        cursor: pointer;
+        appearance: none;
+        height: 20px;
+        width: 20px;
+        border-bottom: 3px solid #000;
+        border-right: 3px solid #000;
+        transform: rotate(45deg);
+        transition: 0.2s;
+        margin: 5px 10px 0px 10px;
+      }
+      input[type="checkbox"]:checked {
+        transform: rotate(225deg);
+        transition: 0.2s;
+      }
+      input[type="checkbox"]:checked ~ .product-row {
+        display: none;
+      }
+
+      .product-row {
+        width: 100%;
+        max-width: none;
+        @include flex(column);
+        > a {
+          width: 100%;
+          @include flex();
+          padding: 15px 0px;
+          color: #000;
+          text-decoration: none;
+          font-size: $medium;
+          transition: 0.2s;
+          &:hover {
+            transition: 0.2s;
+            background-color: $color-4;
+          }
+          &:active {
+            transform: scale(0.93);
+            box-shadow: inset 2px 2px #fff, inset -2px -2px #fff;
+          }
+        }
+      }
+      @include desktop() {
+        #toggle {
+          display: none;
+        }
+        > .product-row {
+          display: flex !important;
+          @include flex(row nowrap !important);
+          a {
+            width: fit-content;
+            padding: 15px;
+          }
+        }
+      }
+    }
+  }
+
+  .product-row {
+    @include flex(row wrap);
+    max-width: 900px;
+    width: 100%;
+    > article {
+      max-width: 150px;
+      margin: 10px;
+      border: 1px solid #000;
+      figure {
+        border-bottom: 1px solid #000;
+      }
+      header {
+        width: 100%;
+        @include flex(column, flex-start);
+        h3 {
+          margin: 2px 0px;
+          text-align: start;
+        }
+      }
+      footer {
+        margin-top: 15px;
+        a {
+          align-self: center;
+        }
+      }
+      div {
+        border-radius: 0px;
+        > div {
+          background-color: transparent;
+          border-radius: 0px;
+          padding: 0px;
+          margin: 0px;
+        }
+        > p {
+          height: 110px;
+          text-align: start;
+          overflow: hidden;
+        }
+      }
+      footer {
+        @include flex($align: flex-start);
+        > p {
+          text-align: start;
+          margin: 0px 0px 5px 0px;
+        }
+      }
+    }
+    > article:hover {
+      transition: 0.2s;
+      transform: scale(1.1);
+    }
+  }
   .btn {
     @include border(2px, $color-3-dark);
     width: 100%;
@@ -99,12 +232,20 @@ main {
     color: #434343;
     border-bottom: 3px solid $color-1;
   }
+  .loading {
+    margin-top: 40px;
+    @include flex();
+    height: 250px;
+    width: 250px;
+    img {
+      width: 100%;
+      animation: 1s spin infinite linear;
+    }
+  }
   figure {
     @include flex(row wrap);
-    position: relative;
     width: 100%;
     max-height: 290px;
-    background-color: #1a7dda;
     min-width: $min-width;
     margin: 0px;
     overflow: hidden;
@@ -182,23 +323,22 @@ main {
     border-bottom: 3px solid $color-1;
     margin: 0.8rem;
   }
-
   // Contact page
-  
+
   .contactpage-wrapper {
-    @include flex($direction:column, $justify:flex-start, $align:center);
+    @include flex($direction: column, $justify: flex-start, $align: center);
     width: 100%;
     height: auto;
     padding: 30px 0 0 0;
 
-    @include desktop {      
+    @include desktop {
       @include flex(row, space-evenly, flex-start);
-      height: 100vh;
+      min-height: 100vh;
       width: 100%;
     }
-    
+
     .we-are-here-info {
-      @include flex($direction:column, $justify:flex-start, $align:center);
+      @include flex($direction: column, $justify: flex-start, $align: center);
       @include box-shadow();
       @include border(1px, #000);
       padding: 1rem;
@@ -229,23 +369,23 @@ main {
       }
 
       .address-box {
-        @include flex($direction:row, $justify:space-around, $align:center);
+        @include flex($direction: row, $justify: space-around, $align: center);
         width: 100%;
         margin-top: 15px;
 
-        .visit-address, .call-us {
-          @include flex($direction:column, $align:center);
+        .visit-address,
+        .call-us {
+          @include flex($direction: column, $align: center);
         }
 
         .call-us {
           align-self: flex-start;
         }
       }
-
     }
-    
+
     form {
-      @include flex($direction:column, $justify:flex-start, $align:center);
+      @include flex($direction: column, $justify: flex-start, $align: center);
       @include box-shadow();
       @include border(1px, #000);
       padding: 1rem;
@@ -260,123 +400,128 @@ main {
         height: 700px;
       }
 
-        input, textarea {
-          box-sizing: border-box;
-          width: 100%;
-          outline: none;
-          border: 1px solid black;
-          // border-radius: 25px;
-          text-indent: 10px;
-          height: 30px;
-        }
+      input,
+      textarea {
+        box-sizing: border-box;
+        width: 100%;
+        outline: none;
+        border: 1px solid black;
+        // border-radius: 25px;
+        text-indent: 10px;
+        height: 30px;
+      }
+
+      select {
+        width: 60%;
+      }
+
+      h2 {
+        // margin: 0 0 20px 0;
+      }
+
+      .first-last-name,
+      .petname-email,
+      .subject,
+      .explain-matter {
+        @include flex(column);
+        width: 100%;
+      }
+
+      .first-name,
+      .last-name,
+      .pet-name,
+      .email {
+        width: 100%;
+        margin-bottom: 10px;
+      }
+
+      .subject,
+      .explain-matter {
+        width: 100%;
+        margin-bottom: 20px;
+      }
+
+      .explain-matter textarea {
+        margin-top: 5px;
+        width: 100%;
+        height: 60px;
+        resize: vertical;
+      }
+
+      .subject {
+        margin-top: 15px;
 
         select {
-          width: 60%;
-        }
-
-        h2 {
-          // margin: 0 0 20px 0;
-        }
-
-        .first-last-name, .petname-email, .subject, .explain-matter {
-          @include flex(column);
-          width: 100%;
-        }
-
-        .first-name, .last-name, .pet-name, .email {
-          width: 100%;
-          margin-bottom: 10px;
-        }
-
-        .subject, .explain-matter {
-          width: 100%;
-          margin-bottom: 20px;
-        }
-
-        .explain-matter textarea {
           margin-top: 5px;
           width: 100%;
-          height: 60px;
-          resize: vertical;
+        }
+      }
+
+      .buttons {
+        @include flex(column);
+        width: 100%;
+
+        @include desktop {
+          @include flex(row);
+          margin: 20px 0 0 0;
         }
 
-        .subject {
-          margin-top: 15px;
-          
-          select {
-            margin-top: 5px;
-            width: 100%;
-          }
-        }
-
-        .buttons {
-          @include flex(column);
-          width: 100%;
+        .btn:first-child {
+          margin-bottom: 10px;
+          width: 70%;
+          background-color: $color-3-dark;
 
           @include desktop {
-            @include flex(row);
-            margin: 20px 0 0 0;
+            margin-bottom: 0;
+            margin-right: 50px;
+            width: 40%;
           }
+        }
 
-          .btn:first-child {
-            margin-bottom: 10px;
-            width: 70%;
-            background-color: $color-3-dark;
+        .btn:last-child {
+          width: 70%;
+          background-color: rgb(206, 230, 252);
 
-            @include desktop {
-              margin-bottom: 0;
-              margin-right: 50px;
-              width: 40%;
-            }
-          }
-
-          .btn:last-child {
-            width: 70%;
-            background-color: rgb(206, 230, 252);
-
-            @include desktop {
-              width: 40%;
-            }
+          @include desktop {
+            width: 40%;
           }
         }
       }
+    }
+  }
+
+  .btn {
+    @include border(2px, $color-3-dark);
+    width: 100%;
+    text-decoration: none;
+    font-size: $medium;
+    padding: 5px;
+    background-color: $color-3;
+    border-radius: 3px;
+    transition: 0.1s;
+    color: #000;
+    text-align: center;
+  }
+  .btn:hover {
+    background-color: $color-4;
+    cursor: pointer;
+    transition: 0.1s;
+  }
+  .btn:active {
+    transform: scale(0.93);
+    box-shadow: inset 2px 2px #fff, inset -2px -2px #fff;
+
+    background-color: $color-4-light;
+    text-decoration: none;
+    color: #000;
   }
 }
 
-.btn {
-  @include border(2px, $color-3-dark);
-  width: 100%;
-  text-decoration: none;
-  font-size: $medium;
-  padding: 5px;
-  background-color: $color-3;
-  border-radius: 3px;
-  transition: 0.1s;
-  color: #000;
-  text-align: center;
-}
-.btn:hover {
-  background-color: $color-4;
-  cursor: pointer;
-  transition: 0.1s;
-}
-.btn:active {
-  transform: scale(0.93);
-  box-shadow: inset 2px 2px #fff, inset -2px -2px #fff;
-
-  background-color: $color-4-light;
-  text-decoration: none;
-  color: #000;
-}
-
-@keyframes gradient-background {
+@keyframes spin {
   0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 100%;
+    transform: rotate(0deg);
   }
   100% {
-    background-position: 0% 50%;
+    transform: rotate(360deg);
   }
 }

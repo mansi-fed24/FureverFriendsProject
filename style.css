@@ -5,6 +5,18 @@ main {
   justify-content: flex-start;
   align-items: center;
 }
+main #to-top {
+  position: sticky;
+  bottom: 10px;
+  left: 90%;
+  color: #000;
+  text-decoration: none;
+  z-index: 2;
+  background-color: #d0d0d0;
+  border-radius: 50%;
+  font-size: 50px;
+  margin: 20px;
+}
 main article.about-card p {
   text-align: start;
   width: 100%;
@@ -71,6 +83,144 @@ main section:not(section.hero) {
   box-sizing: border-box;
   padding: 10px;
 }
+main section.products-header {
+  width: 100%;
+  background-color: #a2d2ff;
+  padding: 0px !important;
+}
+main section.products-header h1 {
+  margin-bottom: 0px;
+}
+main section.products-header .top-field {
+  width: 100%;
+  border-bottom: 1px solid #000;
+}
+main section.products-header .top-field input[type=checkbox] {
+  cursor: pointer;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  height: 20px;
+  width: 20px;
+  border-bottom: 3px solid #000;
+  border-right: 3px solid #000;
+  transform: rotate(45deg);
+  transition: 0.2s;
+  margin: 5px 10px 0px 10px;
+}
+main section.products-header .top-field input[type=checkbox]:checked {
+  transform: rotate(225deg);
+  transition: 0.2s;
+}
+main section.products-header .top-field input[type=checkbox]:checked ~ .product-row {
+  display: none;
+}
+main section.products-header .top-field .product-row {
+  width: 100%;
+  max-width: none;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+main section.products-header .top-field .product-row > a {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  padding: 15px 0px;
+  color: #000;
+  text-decoration: none;
+  font-size: 18px;
+  transition: 0.2s;
+}
+main section.products-header .top-field .product-row > a:hover {
+  transition: 0.2s;
+  background-color: #bde0fe;
+}
+main section.products-header .top-field .product-row > a:active {
+  transform: scale(0.93);
+  box-shadow: inset 2px 2px #fff, inset -2px -2px #fff;
+}
+@media (width > 998px) {
+  main section.products-header .top-field #toggle {
+    display: none;
+  }
+  main section.products-header .top-field > .product-row {
+    display: flex !important;
+    display: flex;
+    flex-flow: row nowrap !important;
+    justify-content: center;
+    align-items: center;
+  }
+  main section.products-header .top-field > .product-row a {
+    width: -moz-fit-content;
+    width: fit-content;
+    padding: 15px;
+  }
+}
+main .product-row {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  max-width: 900px;
+  width: 100%;
+}
+main .product-row > article {
+  max-width: 150px;
+  margin: 10px;
+  border: 1px solid #000;
+}
+main .product-row > article figure {
+  border-bottom: 1px solid #000;
+}
+main .product-row > article header {
+  width: 100%;
+  display: flex;
+  flex-flow: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+main .product-row > article header h3 {
+  margin: 2px 0px;
+  text-align: start;
+}
+main .product-row > article footer {
+  margin-top: 15px;
+}
+main .product-row > article footer a {
+  align-self: center;
+}
+main .product-row > article div {
+  border-radius: 0px;
+}
+main .product-row > article div > div {
+  background-color: transparent;
+  border-radius: 0px;
+  padding: 0px;
+  margin: 0px;
+}
+main .product-row > article div > p {
+  height: 110px;
+  text-align: start;
+  overflow: hidden;
+}
+main .product-row > article footer {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: flex-start;
+}
+main .product-row > article footer > p {
+  text-align: start;
+  margin: 0px 0px 5px 0px;
+}
+main .product-row > article:hover {
+  transition: 0.2s;
+  transform: scale(1.1);
+}
 main .btn {
   border: 2px solid #58aeff;
   width: 100%;
@@ -108,15 +258,26 @@ main .with-undertitle + h4 {
   color: #434343;
   border-bottom: 3px solid #ffafcc;
 }
+main .loading {
+  margin-top: 40px;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  height: 250px;
+  width: 250px;
+}
+main .loading img {
+  width: 100%;
+  animation: 1s spin infinite linear;
+}
 main figure {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
   align-items: center;
-  position: relative;
   width: 100%;
   max-height: 290px;
-  background-color: #1a7dda;
   min-width: 250px;
   margin: 0px;
   overflow: hidden;
@@ -223,7 +384,7 @@ main .contactpage-wrapper {
     flex-flow: row;
     justify-content: space-evenly;
     align-items: flex-start;
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
   }
 }
@@ -268,7 +429,8 @@ main .contactpage-wrapper .we-are-here-info .address-box {
   width: 100%;
   margin-top: 15px;
 }
-main .contactpage-wrapper .we-are-here-info .address-box .visit-address, main .contactpage-wrapper .we-are-here-info .address-box .call-us {
+main .contactpage-wrapper .we-are-here-info .address-box .visit-address,
+main .contactpage-wrapper .we-are-here-info .address-box .call-us {
   display: flex;
   flex-flow: column;
   justify-content: center;
@@ -297,7 +459,8 @@ main .contactpage-wrapper form {
     height: 700px;
   }
 }
-main .contactpage-wrapper form input, main .contactpage-wrapper form textarea {
+main .contactpage-wrapper form input,
+main .contactpage-wrapper form textarea {
   box-sizing: border-box;
   width: 100%;
   outline: none;
@@ -308,18 +471,25 @@ main .contactpage-wrapper form input, main .contactpage-wrapper form textarea {
 main .contactpage-wrapper form select {
   width: 60%;
 }
-main .contactpage-wrapper form .first-last-name, main .contactpage-wrapper form .petname-email, main .contactpage-wrapper form .subject, main .contactpage-wrapper form .explain-matter {
+main .contactpage-wrapper form .first-last-name,
+main .contactpage-wrapper form .petname-email,
+main .contactpage-wrapper form .subject,
+main .contactpage-wrapper form .explain-matter {
   display: flex;
   flex-flow: column;
   justify-content: center;
   align-items: center;
   width: 100%;
 }
-main .contactpage-wrapper form .first-name, main .contactpage-wrapper form .last-name, main .contactpage-wrapper form .pet-name, main .contactpage-wrapper form .email {
+main .contactpage-wrapper form .first-name,
+main .contactpage-wrapper form .last-name,
+main .contactpage-wrapper form .pet-name,
+main .contactpage-wrapper form .email {
   width: 100%;
   margin-bottom: 10px;
 }
-main .contactpage-wrapper form .subject, main .contactpage-wrapper form .explain-matter {
+main .contactpage-wrapper form .subject,
+main .contactpage-wrapper form .explain-matter {
   width: 100%;
   margin-bottom: 20px;
 }
@@ -373,8 +543,7 @@ main .contactpage-wrapper form .buttons .btn:last-child {
     width: 40%;
   }
 }
-
-.btn {
+main .btn {
   border: 2px solid #58aeff;
   width: 100%;
   text-decoration: none;
@@ -386,14 +555,12 @@ main .contactpage-wrapper form .buttons .btn:last-child {
   color: #000;
   text-align: center;
 }
-
-.btn:hover {
+main .btn:hover {
   background-color: #bde0fe;
   cursor: pointer;
   transition: 0.1s;
 }
-
-.btn:active {
+main .btn:active {
   transform: scale(0.93);
   box-shadow: inset 2px 2px #fff, inset -2px -2px #fff;
   background-color: #ddefff;
@@ -401,15 +568,12 @@ main .contactpage-wrapper form .buttons .btn:last-child {
   color: #000;
 }
 
-@keyframes gradient-background {
+@keyframes spin {
   0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 100%;
+    transform: rotate(0deg);
   }
   100% {
-    background-position: 0% 50%;
+    transform: rotate(360deg);
   }
 }
 footer {
