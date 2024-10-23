@@ -13,35 +13,79 @@
   <header class="main-header">
     <nav>
       <ul class="sidebar">
-        <li onclick=hideSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#5f6368"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg></a></li>
-        
+        <li onclick="hideSidebar()">
+          <a href="#"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="26px"
+              viewBox="0 -960 960 960"
+              width="26px"
+              fill="#5f6368"
+            >
+              <path
+                d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"
+              /></svg
+          ></a>
+        </li>
+
         <li><a href="about.html">About Us</a></li>
         <li><a href="products.html">Products</a></li>
         <li><a href="references.html">References</a></li>
         <li><a href="contact.html">Contact</a></li>
-        
       </ul>
-      <div class="menu-button"  onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="26px" viewBox="0 -960 960 960" width="26px" fill="#5f6368"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></div>
-      <div class="showontop" class="home"><a href="index.html"><img src="images/newlogo.png" alt="Furever Friends Logo. White Dog sits next to brown cat."></a></div>
+      <div class="menu-button" onclick="showSidebar()">
+        <a href="#"
+          ><svg
+            xmlns="http://www.w3.org/2000/svg"
+            height="26px"
+            viewBox="0 -960 960 960"
+            width="26px"
+            fill="#5f6368"
+          >
+            <path
+              d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"
+            /></svg
+        ></a>
+      </div>
+      <div class="showontop home">
+        <a href="index.html"
+          ><img
+            src="images/newlogo.png"
+            alt="Furever Friends Logo. White dog sits next to Brown cat."
+        /></a>
+      </div>
       <ul>
         <li class="hideOnMobile"><a href="about.html">About Us</a></li>
         <li class="hideOnMobile"><a href="products.html">Products</a></li>
         <li class="hideOnMobile"><a href="references.html">References</a></li>
         <li class="hideOnMobile"><a href="contact.html">Contact</a></li>
-        <li class="cart"><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="28px" viewBox="0 -960 960 960" width="28px" fill="#5f6368"><path d="m480-560-56-56 63-64H320v-80h167l-64-64 57-56 160 160-160 160ZM280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM40-800v-80h131l170 360h280l156-280h91L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68.5-39t-1.5-79l54-98-144-304H40Z"/></svg></a></li>
+        <li class="cart">
+          <a href="#"
+            ><svg
+              xmlns="http://www.w3.org/2000/svg"
+              height="28px"
+              viewBox="0 -960 960 960"
+              width="28px"
+              fill="#5f6368"
+            >
+              <path
+                d="m480-560-56-56 63-64H320v-80h167l-64-64 57-56 160 160-160 160ZM280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM40-800v-80h131l170 360h280l156-280h91L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68.5-39t-1.5-79l54-98-144-304H40Z"
+              /></svg
+          ></a>
+        </li>
       </ul>
     </nav>
     <script>
-         function showSidebar(){
-            const sidebar = document.querySelector('.sidebar')
-            sidebar.style.display = 'flex'
-        }
-        function hideSidebar(){
-            const sidebar = document.querySelector('.sidebar')
-            sidebar.style.display = 'none'
-        }
+      function showSidebar() {
+        const sidebar = document.querySelector(".sidebar");
+        sidebar.style.display = "flex";
+      }
+      function hideSidebar() {
+        const sidebar = document.querySelector(".sidebar");
+        sidebar.style.display = "none";
+      }
     </script>
-</header>
+  </header>
 
   <header class="r-header">
     <h1 class="r-h1">What Our Customers Say</h1>
@@ -105,31 +149,42 @@
     </section>
   </main>
 
+
   <footer>
     <div class="footer-wrapper">
-        <div class="footer-upper">
-            <div class="footer-address">
-              <div class="center-me">
-                <h3>VISITING ADRESS</h3>
-                <p>Kattgatan 12</p>
-                <p>199 99 Mjautown</p>
-              </div>
-            </div>
-            <div class="footer-logotype"><img src="/Images/newlogo.png" alt=""></div>
-            <div class="footer-links">
-                <ul>
-                    <li><a href="index.html">Home</a></li><br>
-                    <li><a href="products.html">Our Products</a></li><br>
-                    <li><a href="about.html">About Us</a></li><br>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </div>
+      <div class="footer-upper">
+        <div class="footer-address">
+          <div class="center-me">
+            <h3>VISITING ADRESS</h3>
+            <p>Kattgatan 12</p>
+            <p>199 99 Mjautown</p>
+          </div>
         </div>
-        <div class="footer-bottom">
-            <hr>
-            <p>&copy;2024 www.fureverfriends.com - All Rights Reserved.</p>
+        <div class="footer-logotype">
+          <img src="/Images/newlogo.png" alt="" />
         </div>
+        <div class="footer-links">
+          <ul>
+            <li>
+              <a href="index.html">Home<br /></a>
+            </li>
+            <li>
+              <a href="products.html">Our Products<br /></a>
+            </li>
+            <li>
+              <a href="about.html">About Us<br /></a>
+            </li>
+            <li>
+              <a href="contact.html">Contact<br /></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <hr />
+        <p>&copy;2024 www.fureverfriends.com - All Rights Reserved.</p>
+      </div>
     </div>
-</footer>
+  </footer>
 </body>
 </html>
