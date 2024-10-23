@@ -16,7 +16,16 @@ html, body{
 body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-
+h1, h2, h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700; /* Use 600 or 700 based on your choice */
+  }
+  
+  /* For normal body text */
+  body, p {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+  }
 h1{
     font-size: 34px;
 }
