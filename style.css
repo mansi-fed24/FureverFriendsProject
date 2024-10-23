@@ -559,6 +559,9 @@ main .contactpage-wrapper {
     width: 100%;
   }
 }
+main .contactpage-wrapper address {
+  font-style: normal;
+}
 main .contactpage-wrapper .we-are-here-info {
   display: flex;
   flex-flow: column;
@@ -777,6 +780,9 @@ footer .footer-wrapper .footer-upper .footer-address {
   align-items: center;
   width: -moz-fit-content;
   width: fit-content;
+}
+footer .footer-wrapper .footer-upper .footer-address address {
+  font-style: normal;
 }
 footer .footer-wrapper .footer-upper .footer-address .center-me {
   display: flex;

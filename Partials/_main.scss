@@ -386,6 +386,10 @@ main {
       width: 100%;
     }
 
+    address {
+      font-style: normal;
+    }
+
     .we-are-here-info {
       @include flex($direction: column, $justify: flex-start, $align: center);
       @include box-shadow();
