@@ -136,10 +136,16 @@ main #to-top {
   font-size: 50px;
   margin: 20px;
 }
+main article.about-card header {
+  width: 100%;
+}
 main article.about-card p {
   text-align: start;
   width: 100%;
   margin: 0.3rem;
+}
+main article.about-card h3 {
+  width: auto;
 }
 main section.hero {
   display: flex;

@@ -17,10 +17,16 @@ main {
   }
 
   article.about-card {
+    header{
+      width: 100%;
+    }
     p {
       text-align: start;
       width: 100%;
       margin: 0.3rem;
+    }
+    h3{
+      width:auto;
     }
   }
   section.hero {
