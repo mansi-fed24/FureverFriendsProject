@@ -1,9 +1,9 @@
 footer {
-    font-family: "Poppins", sans-serif;
     height: 200px;
     /* height: auto; */
     width: 100%;
     background-color: $color-footer;
+    margin-top: 30px;
 
     .footer-wrapper {
         @include flex($direction: column);
@@ -16,10 +16,39 @@ footer {
             height: 80%;
             
             .footer-address {
-                display: none;
+                @include flex();
+                width: fit-content;
+
+                .center-me {
+                    @include flex(column, center, $align:flex-start);
+                    margin-left: 15px;
+
+                    @include desktop {
+                        margin-left: 30px;
+                    }
+                }
+
+                h3 {
+                    font-size: 0.7rem;
+                    margin: 0 0 8px 0;
+
+                    @include desktop {
+                        font-size: 1.3rem;
+                    }
+                }
+
+                p {
+                    margin: 0;
+                    text-align: left;
+                    font-size: 0.9rem;
+
+                    @include desktop {
+                        font-size: 1.3rem;
+                    }
+                }
 
                 @include desktop {
-                    @include flex($direction: column);
+                    @include flex($direction: row, $justify:flex-start, $align:center);
                     width: 33%;
                     height: 100%;
                 }
@@ -31,47 +60,65 @@ footer {
                 width: 50%;
                 height: 100%;
                 font-size: 2rem;
-                
-                @include desktop {          
+
+                img {
+                    width: 60%;
+                    max-width: 180px;
+                }
+
+                @include desktop {  
+                    img {
+                        width: 40%;
+                    }
                     width: 33%;
                 }
-                
             }
 
             
             .footer-links {
-                @include flex($direction: row, $justify: center);
-                width: 50%;
+                @include flex($direction: row, $justify: flex-end);
+                box-sizing: border-box;
+                width: fit-content;
                 height: 100%;
 
                 @include desktop {
                     justify-content: flex-end;
                     width: 33%;
-                    flex-shrink: 0;
                 }
 
-                ul li {
-                    font-family: "Montserrat", sans-serif;
-                    list-style: none;
-                    margin-bottom: 8px;
+                ul {
                     text-align: right;
-                    font-size: 1rem;
-
+                    
                     @include desktop {
-                        font-size: 1.5rem;
-                        display: inline-block;
-                        margin-right: 15px;
+                        display: flex;
                     }
+                    
+                    li {
+                        margin-right: 15px;
+                        display: inline;
+                        white-space: nowrap;
+                        list-style: none;
+                        margin-bottom: 8px;
+                        font-size: 0.9rem;
+    
+                        @include desktop {
 
-                    a {
-                        text-decoration: none;
-                        color: black;
-
-                        &:hover {
-                            text-decoration: underline;
+                            font-size: 1.3rem;
+                            display: inline;
+                            margin-right: 10px;
+                        }
+    
+                        a {
+                            text-decoration: none;
+                            color: black;
+    
+                            &:hover {
+                                text-decoration: underline;
+                            }
                         }
                     }
                 }
+
 
             }
         }

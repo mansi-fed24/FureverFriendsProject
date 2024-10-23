@@ -1,7 +1,5 @@
 
 main {
-  // font-family: "Montserrat", serif;
-  font-family: "Poppins", sans-serif;
   @include flex(column, flex-start);
   #to-top {
     position: sticky;
