@@ -12,19 +12,16 @@ html, body{
     margin: 0px;
     min-height: 100vh;
 }
-
-body{
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-h1, h2, h3 {
+h1, h2, h3, h4 {
     font-family: 'Poppins', sans-serif;
     font-weight: 700; /* Use 600 or 700 based on your choice */
+    cursor: default;
   }
   
-  /* For normal body text */
-  body, p {
-    font-family: 'Open Sans', sans-serif;
+  p {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif,'Open Sans';
     font-weight: 400;
+    cursor: default;
   }
 h1{
     font-size: 34px;
