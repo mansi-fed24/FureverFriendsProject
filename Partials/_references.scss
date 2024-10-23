@@ -1,150 +1,104 @@
-// body {
-//     font-family: 'Arial', sans-serif;
-//     background-color: #f4f4f4;
-//     margin: 0;
-//     padding: 0;
-//      background-image: linear-gradient(#678ea0 100%, $color-3, $color-1);
-//     background-repeat: no-repeat;
-// }
-
-// header {
-//     background-color: cyan;
-//     color: black;
-//     padding: 15px;
-//     text-align: center;
-// }
-
-// main {
-//     padding: 15px;
-// }
-
-// h2 {
-//     color: #4c4eaf;
-// }
-
-// .testimonials, .partnerships, .success-stories, .cta {
-//     background: white;
-//     margin-bottom: 20px;
-//     padding: 15px;
-//     border-radius: 5px;
-//     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-// }
-
-// .testimonial, .partner, .story {
-//     display: block; /* stack items for mobile version */
-//     align-items: center;
-//     margin-bottom: 20px;
-// }
-
-// img {
-//     width: 120px; /* smaller img size for mobile*/
-//     border-radius: 10%;
-//     margin: o auto 15px;
-// }
-
-// blockquote {
-//     margin: 0;
-//     font-style: italic;
-//     span{
-//         font-weight: 900; 
-//         font-size: large ;   
-//         color:  #3210f1;
-//     }
-// }
-// .rating {
-//     color: #ffcc00; /* Gold color for stars */
-//     font-size: 1.2em;
-//     margin-left: 20px;
-// }
-// .cta {
-//     text-align: center;
-//     background-color: #ffcc00; /* Light orange */
-//     padding: 30px;
-    
-// }
-
-// button {
-//     background-color: #4caf50;
-//     color: white;
-//     padding: 10px 20px;
-//     border: none;
-//     border-radius: 5px;
-//     cursor: pointer;
-//     display: block;
-//     margin: 10px auto; /* center the button*/
-// }
-
-// footer {
-//     text-align: center;
-//     padding: 10px;
-//     background-color: #4caf50;
-//     color: white;
-    
-// }
-// .main-wrapper{
-//     width: 100%;
-//     display: flex;
-//     justify-content: space-around;
-//     align-items: flex-start;
-//     flex-wrap: wrap;
-    
-
-// }
-// .customers{
-//     display: flex;
-//     justify-content: space-between;
-//     align-items: flex-start;
-//     flex-wrap: wrap;
-//     width: 90%;
-    
-// }
-// .testimonial {
-//     width: 40%;
-//     border: 3px cyan solid ;
-//     padding: 30px 30px 30px 30px;
-    
-    
-//   }
-//   @media (min-width: 768px) {
-//     .testimonials, .partnerships, .success-stories {
-//         display: flex; /* Display items side by side */
-//         align-items: center;
-//     }
-
-//     img {
-//         width: 150px; /* Larger image size for tablets */
-//         margin-right: 20px;
-//     }
-
-//     .cta {
-//         padding: 20px;
-//     }
-
-//     button {
-//         width: auto;
-//         padding: 12px 25px;
-//     }
-// }
-
-//   @media (min-width: 1024px){
-//     main{
-//         max-width: 1200px;
-//         margin: 0 auto; /*center the content*/
-//         padding: 20px;
-//     }	
-//     .testimonials, .partnerships, .success-stories {
-//          padding: 20px;
-//          justify-content: space-between;
-//  }
-//      img{
-//          width: 180px; /* little larger size for tablet from 100 to 120*/
-         
-//      }
-//      .cta{
-//          padding: 40px;
-//      }
-//         footer {
-//          padding: 15px;
-//      }
-//  }
-
+ 
+  .r-header {
+    text-align: center;
+    background-color: $color-5;
+    padding: 5px;
+  }
+  
+  .r-h1, .r-h2 {
+    color: $color-6;
+  }
+  
+  .r-main {
+    padding: 20px;
+  }
+  
+  .r-testimonials, .r-partnerships, .r-success-stories {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .r-customers, .r-partners {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  
+  .r-testimonial, .r-partner {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    border: 3px solid cyan;
+    border-radius: 10px;
+  
+    img {
+      border-radius: 20px;
+      width: 150px;
+      height: auto;
+      object-fit: cover;
+      margin-right: 20px;
+    }
+  
+    .r-text {
+      display: flex;
+      flex-direction: column;
+  
+      blockquote {
+        font-style: italic;
+        margin-bottom: 10px;
+      }
+  
+      .r-rating {
+        font-size: 1.2em;
+        color: gold;
+      }
+    }
+  }
+  
+  // Partnerships images
+  .r-partners img {
+    width: 150px;
+    height: auto;
+  }
+  
+  .r-success-stories .r-story {
+    text-align: center;
+  }
+  
+  .r-story img {
+    width: 140px;
+    margin-bottom: 10px;
+  }
+  
+  // Media queries for larger screens
+  @include desktop() {
+    .r-customers {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+  
+      .r-testimonial {
+        flex-basis: calc(50% - 40px); // Two testimonials side by side
+      }
+  
+      .r-testimonial:nth-child(3) {
+        flex-basis: 100%; // Third testimonial full-width below
+      }
+    }
+  
+    .r-partners {
+      flex-direction: row;
+  
+      .r-partner {
+        flex-basis: calc(50% - 10px); // Two partnerships side by side
+      }
+    }
+  }
+  

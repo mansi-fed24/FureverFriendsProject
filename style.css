@@ -205,7 +205,8 @@ main section:not(section.hero) {
 }
 main section.products-header {
   width: 100%;
-  background-color: #a2d2ff;
+  background-color: #e6f7f5;
+  color: #005b5e;
   padding: 0px !important;
 }
 main section.products-header h1 {
@@ -257,7 +258,7 @@ main section.products-header .top-field .product-row > a {
 }
 main section.products-header .top-field .product-row > a:hover {
   transition: 0.2s;
-  background-color: #bde0fe;
+  background-color: #fde4cb;
 }
 main section.products-header .top-field .product-row > a:active {
   transform: scale(0.93);
@@ -806,13 +807,106 @@ footer .footer-wrapper .footer-bottom p {
   margin: 15px 0 10px 0;
 }
 
+.r-header {
+  text-align: center;
+  background-color: #e6f7f5;
+  padding: 5px;
+}
+
+.r-h1, .r-h2 {
+  color: #005b5e;
+}
+
+.r-main {
+  padding: 20px;
+}
+
+.r-testimonials, .r-partnerships, .r-success-stories {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.r-customers, .r-partners {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.r-testimonial, .r-partner {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  border: 3px solid cyan;
+  border-radius: 10px;
+}
+.r-testimonial img, .r-partner img {
+  border-radius: 20px;
+  width: 150px;
+  height: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-right: 20px;
+}
+.r-testimonial .r-text, .r-partner .r-text {
+  display: flex;
+  flex-direction: column;
+}
+.r-testimonial .r-text blockquote, .r-partner .r-text blockquote {
+  font-style: italic;
+  margin-bottom: 10px;
+}
+.r-testimonial .r-text .r-rating, .r-partner .r-text .r-rating {
+  font-size: 1.2em;
+  color: gold;
+}
+
+.r-partners img {
+  width: 150px;
+  height: auto;
+}
+
+.r-success-stories .r-story {
+  text-align: center;
+}
+
+.r-story img {
+  width: 140px;
+  margin-bottom: 10px;
+}
+
+@media (width > 998px) {
+  .r-customers {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  .r-customers .r-testimonial {
+    flex-basis: calc(50% - 40px);
+  }
+  .r-customers .r-testimonial:nth-child(3) {
+    flex-basis: 100%;
+  }
+  .r-partners {
+    flex-direction: row;
+  }
+  .r-partners .r-partner {
+    flex-basis: calc(50% - 10px);
+  }
+}
 html, body {
+  padding: 0px;
   margin: 0px;
   min-height: 100vh;
 }
 
 body {
-  min-height: 100vh;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 

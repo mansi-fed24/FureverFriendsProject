@@ -5,16 +5,15 @@
 @import "./Partials/header.scss";
 @import "./Partials/main.scss";
 @import "./Partials/footer.scss";
-@import "./Partials/references";
+@import "./Partials/references.scss";
 
 html, body{
+    padding: 0px;
     margin: 0px;
     min-height: 100vh;
-    
 }
 
 body{
-    min-height: 100vh;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 

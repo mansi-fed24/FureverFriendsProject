@@ -78,14 +78,14 @@ main {
   }
   section.products-header {
     width: 100%;
-    background-color: $color-3;
+    background-color: $color-5;
+    color: $color-6;
     padding: 0px !important;
     h1 {
       margin-bottom: 0px;
     }
     .top-field {
       width: 100%;
-      // border-top: 1px solid #000;
       border-bottom: 1px solid #000;
       input[type="checkbox"] {
         cursor: pointer;
@@ -120,7 +120,7 @@ main {
           transition: 0.2s;
           &:hover {
             transition: 0.2s;
-            background-color: $color-4;
+            background-color: $color-5-light;
           }
           &:active {
             transform: scale(0.93);
