@@ -1,6 +1,6 @@
 # FureverFriends
 Group-Project: Create a fake company website for a Pet Supplies Company.
-# Furever Friends – Pet Adoption App
+# Furever Friends – Pet Supplies Company
 
 *My very first group project – a special milestone in my frontend journey.*
 
